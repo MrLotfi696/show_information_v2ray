@@ -72,6 +72,8 @@ function getInfo($uuid)
     $response = json_decode(curl('list', [], false, []), true);
     $time = time();
 
+    $res = [];
+
     foreach ($response['obj'] as $inbound) {
         $count_settings = json_decode($inbound["settings"], true)['clients'];
         for ($i = 0; $i < count($count_settings); $i++) {
