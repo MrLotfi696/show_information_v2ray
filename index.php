@@ -23,6 +23,10 @@
                 </div>
                 <button type="submit" class="btn btn-primary font-yekan-bold font-size-button">بررسی</button>
             </form>
+            <div class="button_bottom">
+                <a href="connection-training.html" class="btn btn-warning font-yekan-bold font-size-button">آموزش اتصال</a>
+                <a href="connection-software.html" class="btn btn-warning font-yekan-bold font-size-button">دانلود نرم افزار های اتصال</a>
+            </div>
             
         </div>
         

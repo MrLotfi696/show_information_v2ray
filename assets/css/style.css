@@ -34,6 +34,10 @@ body {
     margin-bottom: 0px;
 }
 
+.box-one-software {
+    margin-bottom: 0px;
+}
+
 .value {
     text-align: left;
 }
@@ -45,6 +49,10 @@ body {
     }
 
     .box-one-inforamtion {
+        margin-bottom: 0.75rem;
+    }
+
+    .box-one-software {
         margin-bottom: 0.75rem;
     }
 
@@ -80,6 +88,10 @@ body {
     }
 
     .box-one-inforamtion {
+        margin-bottom: 0.75rem;
+    }
+
+    .box-one-software {
         margin-bottom: 0.75rem;
     }
 
