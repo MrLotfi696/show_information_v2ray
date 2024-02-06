@@ -141,6 +141,7 @@ function getInfo($uuid)
                             'uuid' => $count_settings[$i]['id'],
                             'id' => $count_clientStats[$i]['id'],
                             'inboundId' => $count_clientStats[$i]['inboundId'],
+                            'protocol' => $inbound['protocol'],
                             'email' => $count_clientStats[$i]['email'],
                             'up' => formatBytes($count_clientStats[$i]['up']),
                             'down' => formatBytes($count_clientStats[$i]['down']),
