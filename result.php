@@ -1,17 +1,22 @@
 <?php
+session_start(['name' => "Mrlotfi"]);
 require "config.php";
 
-if (isset($_POST['input_link']) and !empty($_POST['input_link'])) {
-    $Get_uuid = GetUUID($_POST['input_link']);
-    if ($Get_uuid['success'] == true) {
+if (! isset($_POST['input_link']) || empty($_POST['input_link'])) {
+    $_SESSION['errorUUID'] = true;
+    die(redirect("./index.php"));
+}
+$Get_uuid = GetUUID($_POST['input_link']);
+    if ($Get_uuid['success']) {
         $result = getInfo($Get_uuid['result']);
         if ($result['msg'] !== "ok") {
+            $_SESSION['notfound'] = true;
             die(redirect("./index.php"));
         }
     } else {
+        $_SESSION['errorUUID'] = true;
         die(redirect("./index.php"));
     }
-}
 ?>
 
 <!DOCTYPE html>
@@ -47,11 +52,11 @@ if (isset($_POST['input_link']) and !empty($_POST['input_link'])) {
                             <p>حجم کل</p>
                         </div>
                         <div class="value">
-                            <p><?php echo $result['name']; ?></p>
-                            <p><?php echo $result['status']; ?></p>
-                            <p><?php echo $result['protocol']; ?></p>
-                            <p><?php echo $result['expiryTime']; ?></p>
-                            <p><?php echo $result['total']; ?></p>
+                            <p><?= $result['name']; ?></p>
+                            <p><?= $result['status']; ?></p>
+                            <p><?= $result['protocol']; ?></p>
+                            <p><?= $result['expiryTime']; ?></p>
+                            <p><?= $result['total']; ?></p>
                         </div>
                         
                     </div>
@@ -70,11 +75,11 @@ if (isset($_POST['input_link']) and !empty($_POST['input_link'])) {
                             <p>زمان باقی مانده (روز)</p>
                         </div>
                         <div class="value">
-                            <p><?php echo $result['down']; ?></p>
-                            <p><?php echo $result['up']; ?></p>
-                            <p><?php echo $result['using_all']; ?></p>
-                            <p><?php echo $result['remaining_trafic']; ?></p>
-                            <p><?php echo $result['remaining_days']; ?></p>
+                            <p><?= $result['down']; ?></p>
+                            <p><?= $result['up']; ?></p>
+                            <p><?= $result['using_all']; ?></p>
+                            <p><?= $result['remaining_trafic']; ?></p>
+                            <p><?= $result['remaining_days']; ?></p>
                         </div>
 
                     </div>

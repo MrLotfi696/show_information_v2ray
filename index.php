@@ -1,3 +1,6 @@
+<?php
+session_start(['name' => "Mrlotfi"]);
+?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -11,7 +14,22 @@
     </head>
 
     <body class="container">
-
+        <?php if (isset($_SESSION['notfound']) && $_SESSION['notfound'] == true) { ?>
+        <div class="box-alert position-absolute start-50 translate-middle w-75">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>خطا!</strong> سرویس شما یافت نشد، لطفا در وارد کردن لینک دقت فرمایید.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+        <?php unset($_SESSION['notfound']); } ?>
+        <?php if (isset($_SESSION['errorUUID']) && $_SESSION['errorUUID'] == true) { ?>
+        <div class="box-alert position-absolute start-50 translate-middle w-75">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>خطا!</strong> لینک وارد شده صحیح نمی باشد.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+        <?php unset($_SESSION['errorUUID']); } ?>
         <div class="position-absolute top-50 start-50 translate-middle w-75 rounded p-5 shadow-sm bg-box">
             <h1 class="text-center mb-4 font-yekan-ExtraBold">نمایش اطلاعات سرویس</h1>
             <hr>

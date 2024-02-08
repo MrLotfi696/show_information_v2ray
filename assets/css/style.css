@@ -12,6 +12,10 @@ body {
     padding: 25px !important;
 }
 
+.box-alert {
+    top: 20% !important;
+}
+
 .button_bottom>a {
     margin-bottom: 10px;
 }
