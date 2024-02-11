@@ -15,3 +15,8 @@
 
 ## آموزش راه اندازی اسکریپت ( ویدئویی )
 بزودی
+
+## پیش نمایش
+![Screenshot-1](https://github.com/MrLotfi696/show_information_v2ray/blob/main/assets/image/Screenshot-1.png)
+![Screenshot-2](https://github.com/MrLotfi696/show_information_v2ray/blob/main/assets/image/Screenshot-2.png)
+![Screenshot-3](https://github.com/MrLotfi696/show_information_v2ray/blob/main/assets/image/Screenshot-3.png)
